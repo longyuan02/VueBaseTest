@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绑定动态数据以注册事件</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app1"><span v-if="sceen===true">span1-v-if{{ sceen }}</span>
+        <span v-else-if="sceen===false">span2-v-else-if{{ sceen }}</span>
+        <span v-else>span3-else{{ sceen }}</span></div>
+    <div id="app2">
+        <span v-show="sceen===true">span1{{ sceen }}</span>
+        <span v-show="sceen===false">span2{{ sceen }}</span>
+    </div>
+    <script>
+        app1 = new Vue({
+            el: "#app1",
+            data: {
+                sceen: true
+            }
+        });
+        app2=new Vue({
+            el:"#app2",
+            data:{
+                sceen:true
+            }
+        });
+    </script>
+
+</body>
+
+</html>
